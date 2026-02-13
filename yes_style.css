@@ -78,22 +78,22 @@ body {
 /* Letter – upgraded style for more engagement */
 .letter {
     position: absolute;
-    top: 00px;            /* starting position near flap */
-    left: 30%;
-    transform: translateX(-50%);  /* center the letter */
-    width: 500px;         /* same as before */
-    padding: 25px 30px;   /* slightly more padding */
+    top: 20px;                  /* slightly below the flap */
+    left: 50%;                  /* center horizontally */
+    transform: translateX(-50%);/* center */
+    width: 500px;               /* keep your width */
+    padding: 25px 30px;         /* padding inside letter */
     background: linear-gradient(180deg, #fff8f0 0%, #ffe8e0 100%); /* soft cream/pink */
-    color: #d32f2f;       /* red text for love */
+    color: #d32f2f;             /* red love text */
     font-family: "Nunito", sans-serif;
-    font-size: 18px;       /* same readable size */
-    border-radius: 12px;   /* rounded corners for letter feel */
-    display: none;
-    box-shadow: 0 8px 20px rgba(0,0,0,0.2); /* more depth */
-    line-height: 1.7;      /* slightly more spacing */
+    font-size: 18px;            /* readable text */
+    border-radius: 12px;        /* rounded corners */
+    display: none;              /* hidden until open */
+    box-shadow: 0 8px 20px rgba(0,0,0,0.2); /* depth */
+    line-height: 1.7;           /* spacing */
     text-align: left;
-    border: 2px solid #f5c6cb; /* subtle pink border for elegance */
-    position: absolute;
+    border: 2px solid #f5c6cb;  /* subtle pink border */
+    z-index: 10;                /* on top of envelope */
 }
 
 /* Decorative small heart on top-right of letter */
@@ -104,6 +104,7 @@ body {
     right: 15px;
     font-size: 24px;
 }
+
 
 /* Floating hearts */
 .heart {
