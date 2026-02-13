@@ -8,6 +8,7 @@ const messages = [
     "Last warning before I cry 🥺",
     "Maaniii... You are hurting me 😫",
     "I am crying 😭",
+    "💔",
     "💔"
 ];
 
