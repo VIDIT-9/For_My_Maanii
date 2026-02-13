@@ -58,16 +58,16 @@ body {
 /* Open Me text on flap */
 .open-btn {
     position: absolute;
-    top: 120px;          /* lower than before to sit on flap nicely */
+    top: 120px;          /* slightly lower on flap */
     left: 50%;
     transform: translateX(-50%);
-    background: none;   /* remove white box */
-    color: white;       /* text in white */
-    border: none;       /* no border */
-    font-size: 20px;    /* slightly bigger text */
+    background: none;   /* no box */
+    color: white;       /* text white */
+    border: none;
+    font-size: 20px;
     font-weight: bold;
     cursor: pointer;
-    text-shadow: 1px 1px 2px rgba(0,0,0,0.5); /* optional: makes text readable on pink flap */
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
 }
 
 .open-btn:hover {
@@ -75,23 +75,34 @@ body {
     transition: 0.3s;
 }
 
-
-/* Letter */
+/* Letter – upgraded style for more engagement */
 .letter {
     position: absolute;
     top: 20px;            /* starting position near flap */
     left: 50%;
     transform: translateX(-50%);  /* center the letter */
-    width: 350px;         /* increased from 100% (300px) */
-    padding: 20px;
-    background: white;
-    color: #d32f2f;
+    width: 350px;         /* same as before */
+    padding: 25px 30px;   /* slightly more padding */
+    background: linear-gradient(180deg, #fff8f0 0%, #ffe8e0 100%); /* soft cream/pink */
+    color: #d32f2f;       /* red text for love */
     font-family: "Nunito", sans-serif;
-    border-radius: 5px;
+    font-size: 18px;       /* same readable size */
+    border-radius: 12px;   /* rounded corners for letter feel */
     display: none;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
-    line-height: 1.6;
-    text-align: left;     /* better for love letter style */
+    box-shadow: 0 8px 20px rgba(0,0,0,0.2); /* more depth */
+    line-height: 1.7;      /* slightly more spacing */
+    text-align: left;
+    border: 2px solid #f5c6cb; /* subtle pink border for elegance */
+    position: absolute;
+}
+
+/* Decorative small heart on top-right of letter */
+.letter::before {
+    content: "💖";
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 24px;
 }
 
 /* Floating hearts */
