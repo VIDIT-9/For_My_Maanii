@@ -79,7 +79,7 @@ body {
 .letter {
     position: absolute;
     top: 00px;            /* starting position near flap */
-    left: 100%;
+    left: 30%;
     transform: translateX(-50%);  /* center the letter */
     width: 500px;         /* same as before */
     padding: 25px 30px;   /* slightly more padding */
