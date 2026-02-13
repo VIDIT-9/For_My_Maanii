@@ -17,24 +17,32 @@
             I always knew you would say yes ❤️
         </h1>
 
-        <button class="reveal-btn" id="revealBtn">
-            💌
-        </button>
+        <!-- Envelope Structure -->
+        <div class="envelope-container">
+            <div class="envelope">
+                <div class="envelope-flap"></div>
+                <button class="open-btn" id="openBtn">💌 Open Me</button>
+            </div>
+            <div class="letter" id="letter"></div>
+        </div>
     </div>
 
 <script>
 document.addEventListener("DOMContentLoaded", function() {
+
     const messageLines = [
         "You just made me the happiest person alive 🥹💖.",
         "You are the most beautiful gift that God has given me.",
+        "My life has completely changed since you came into it.",
         "Thank you for always being an angel in my life, making me obsessed for you 😍.",
         "You are the reason I fall more in love with you every day 😘.",
-        "I promise to love you with all my heart, to always keep you happy", 
-        "and to build a beautiful life together filled with all the happiness and endless memories 🤗🧿.",
-        "You are my everything, now and forever ❤️❤️❤️" 
+        "I promise to love you with all my heart, to always keep you happy, and to build a beautiful life together filled with all the happiness and endless memories 🤗🧿.",
+        "You are my everything, now and forever."
     ];
 
-    const btn = document.getElementById("revealBtn");
+    const openBtn = document.getElementById("openBtn");
+    const flap = document.querySelector(".envelope-flap");
+    const letter = document.getElementById("letter");
 
     // Floating hearts generator
     function createHeart() {
@@ -52,25 +60,20 @@ document.addEventListener("DOMContentLoaded", function() {
 
     setInterval(createHeart, 300);
 
-    btn.addEventListener("click", function() {
-        // Create container for lines
-        const msgContainer = document.createElement("div");
-        msgContainer.classList.add("love_message");
-        msgContainer.style.fontSize = "24px";
-        msgContainer.style.marginTop = "20px";
-        msgContainer.style.lineHeight = "1.6";
+    openBtn.addEventListener("click", () => {
+        // Animate flap open
+        flap.style.transform = "rotateX(-180deg)";
+        // Show letter
+        letter.style.display = "block";
 
-        // Replace button with container
-        btn.parentNode.replaceChild(msgContainer, btn);
-
-        // Function to type a single line letter by letter
+        // Typing effect line by line
         let lineIndex = 0;
 
         function typeLine() {
             if (lineIndex >= messageLines.length) return;
 
             const line = document.createElement("p");
-            msgContainer.appendChild(line);
+            letter.appendChild(line);
 
             let charIndex = 0;
 
@@ -78,10 +81,10 @@ document.addEventListener("DOMContentLoaded", function() {
                 if (charIndex < messageLines[lineIndex].length) {
                     line.textContent += messageLines[lineIndex].charAt(charIndex);
                     charIndex++;
-                    setTimeout(typeChar, 50); // typing speed per character
+                    setTimeout(typeChar, 50);
                 } else {
                     lineIndex++;
-                    setTimeout(typeLine, 300); // pause between lines
+                    setTimeout(typeLine, 300);
                 }
             }
 
@@ -89,6 +92,9 @@ document.addEventListener("DOMContentLoaded", function() {
         }
 
         typeLine();
+
+        // Remove the open button
+        openBtn.style.display = "none";
     });
 });
 </script>
