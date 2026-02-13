@@ -58,7 +58,7 @@ body {
 /* Open Me text on flap */
 .open-btn {
     position: absolute;
-    top: 70px;          /* lower than before to sit on flap nicely */
+    top: 120px;          /* lower than before to sit on flap nicely */
     left: 50%;
     transform: translateX(-50%);
     background: none;   /* remove white box */
