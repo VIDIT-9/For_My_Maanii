@@ -31,13 +31,11 @@
 document.addEventListener("DOMContentLoaded", function() {
 
     const messageLines = [
-        "You just made me the happiest person alive 🥹💖.",
-        "You are the most beautiful gift that God has given me.",
-        "My life has completely changed since you came into it.",
-        "Thank you for always being an angel in my life, making me obsessed for you 😍.",
-        "You are the reason I fall more in love with you every day 😘.",
-        "I promise to love you with all my heart, to always keep you happy, and to build a beautiful life together filled with all the happiness and endless memories 🤗🧿.",
-        "You are my everything, now and forever."
+        "You just made me the happiest person alive 🥹💖. You are the most beautiful gift that God has given me.",
+        "My life has completely changed since you came into it. Thank you for always being an angel in my life, making me obsessed for you 😍",
+        "You are the reason I fall more in love with you every day 😘. I promise to love you with all my heart, to always keep you happy,",
+        "and to build a beautiful life together filled with all the happiness and endless memories 🤗🧿.",
+        "You are my everything, now and forever ❤️❤️❤️"
     ];
 
     const openBtn = document.getElementById("openBtn");
@@ -85,7 +83,7 @@ document.addEventListener("DOMContentLoaded", function() {
             if (charIndex < messageLines[lineIndex].length) {
                 line.textContent += messageLines[lineIndex].charAt(charIndex);
                 charIndex++;
-                setTimeout(typeChar, 15); // faster typing (was 50ms)
+                setTimeout(typeChar, 20); // faster typing (was 50ms)
             } else {
                 lineIndex++;
                 setTimeout(typeLine, 100); // smaller pause between lines (was 300ms)
