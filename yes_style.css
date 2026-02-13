@@ -79,9 +79,10 @@ body {
 /* Letter */
 .letter {
     position: absolute;
-    top: 50px;
-    left: 0;
-    width: 100%;
+    top: 20px;            /* starting position near flap */
+    left: 50%;
+    transform: translateX(-50%);  /* center the letter */
+    width: 350px;         /* increased from 100% (300px) */
     padding: 20px;
     background: white;
     color: #d32f2f;
@@ -90,6 +91,7 @@ body {
     display: none;
     box-shadow: 0 5px 15px rgba(0,0,0,0.2);
     line-height: 1.6;
+    text-align: left;     /* better for love letter style */
 }
 
 /* Floating hearts */
