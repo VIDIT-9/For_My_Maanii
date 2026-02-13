@@ -24,9 +24,17 @@
 
 <script>
 document.addEventListener("DOMContentLoaded", function() {
-    const message = "You just made me the happiest person alive 🥹💖. You are the most beautiful gift that God has given me. My life has completely changed since you came into it. Thank you for always being an angel in my life, making me obsessed for you 😍.  You are the reason I fall more in love with you every day 😘. I promise to love you with all my heart, to always keep you happy, and to build a beautiful life together filled with all the happines endless memories 🤗🧿. You are my everything, now and forever.";
+    const messageLines = [
+        "You just made me the happiest person alive 🥹💖.",
+        "You are the most beautiful gift that God has given me.",
+        "My life has completely changed since you came into it.",
+        "Thank you for always being an angel in my life, making me obsessed for you 😍.",
+        "You are the reason I fall more in love with you every day 😘.",
+        "I promise to love you with all my heart, to always keep you happy, and to build a beautiful life together filled with all the happiness and endless memories 🤗🧿.",
+        "You are my everything, now and forever."
+    ];
+
     const btn = document.getElementById("revealBtn");
-    const container = document.querySelector(".container");
 
     // Floating hearts generator
     function createHeart() {
@@ -45,25 +53,42 @@ document.addEventListener("DOMContentLoaded", function() {
     setInterval(createHeart, 300);
 
     btn.addEventListener("click", function() {
-        // Create paragraph for typing effect
-        const msgPara = document.createElement("p");
-        msgPara.classList.add("love_message");
-        msgPara.style.fontSize = "24px";
-        msgPara.style.marginTop = "20px";
+        // Create container for lines
+        const msgContainer = document.createElement("div");
+        msgContainer.classList.add("love_message");
+        msgContainer.style.fontSize = "24px";
+        msgContainer.style.marginTop = "20px";
+        msgContainer.style.lineHeight = "1.6";
 
-        // Replace button with paragraph
-        btn.parentNode.replaceChild(msgPara, btn);
+        // Replace button with container
+        btn.parentNode.replaceChild(msgContainer, btn);
 
-        // Typing effect
-        let i = 0;
-        function typeWriter() {
-            if (i < message.length) {
-                msgPara.textContent += message.charAt(i);
-                i++;
-                setTimeout(typeWriter, 50);
+        // Function to type a single line letter by letter
+        let lineIndex = 0;
+
+        function typeLine() {
+            if (lineIndex >= messageLines.length) return;
+
+            const line = document.createElement("p");
+            msgContainer.appendChild(line);
+
+            let charIndex = 0;
+
+            function typeChar() {
+                if (charIndex < messageLines[lineIndex].length) {
+                    line.textContent += messageLines[lineIndex].charAt(charIndex);
+                    charIndex++;
+                    setTimeout(typeChar, 50); // typing speed per character
+                } else {
+                    lineIndex++;
+                    setTimeout(typeLine, 300); // pause between lines
+                }
             }
+
+            typeChar();
         }
-        typeWriter();
+
+        typeLine();
     });
 });
 </script>
