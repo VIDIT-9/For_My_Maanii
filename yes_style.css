@@ -76,51 +76,53 @@ body {
 }
 
 /* Letter */
+/* Letter – restored cream/pink style */
 .letter {
     position: absolute;
-    top: 20px;                  
-    left: 50%;                  
+    top: 10px;
+    left: 50%;
     transform: translateX(-50%);
-    width: 300px;               
+    width: 350px;              
     max-height: 400px;         
-    padding: 25px 25px;
-    background: linear-gradient(180deg, #fff8f0 0%, #ffe8e0 100%);
-    color: white;               
-    font-family: "Nunito", sans-serif;
+    padding: 25px 30px;        
+    background: linear-gradient(180deg, #fff8f0 0%, #ffe8e0 100%); /* soft cream/pink */
+    color: #d32f2f;            /* red text */
+    font-family: 'Nunito', sans-serif;
     font-size: 16px;
     border-radius: 15px;       
-    display: none;              
-    box-shadow: 0 12px 25px rgba(0,0,0,0.25);
+    display: none;             /* initially hidden */
+    box-shadow: 0 12px 25px rgba(0,0,0,0.25); 
     line-height: 1.6;
     text-align: left;
-    border: 2px solid #f5c6cb;
-    overflow-y: auto;           
+    border: 2px solid #f5c6cb; 
+    overflow-y: auto;          
     z-index: 10;
-    border-top-left-radius: 25px;   
+    border-top-left-radius: 25px;
     border-top-right-radius: 25px;
-    padding-top: 40px;          
+    padding-top: 40px;         
     animation: popLetter 0.5s ease-out forwards;
 }
 
-/* Decorative hearts */
+/* Heart decoration */
 .letter::before {
     content: "💖";
     position: absolute;
     top: 10px;
     right: 15px;
-    font-size: 20px;
+    font-size: 24px;
 }
 
+/* Optional small hearts */
 .letter::after {
     content: "💌";
     position: absolute;
     bottom: 10px;
     left: 10px;
-    font-size: 18px;
+    font-size: 20px;
     opacity: 0.5;
 }
 
-/* Letter pop-up animation */
+/* Pop-up animation */
 @keyframes popLetter {
     0% {
         transform: translateX(-50%) translateY(30px) scale(0.9);
@@ -132,7 +134,7 @@ body {
     }
 }
 
-/* Scrollbar styling for Chrome/Edge */
+/* Scrollbar */
 .letter::-webkit-scrollbar {
     width: 6px;
 }
@@ -140,12 +142,6 @@ body {
 .letter::-webkit-scrollbar-thumb {
     background-color: #d32f2f;
     border-radius: 3px;
-}
-
-/* Scrollbar styling for Firefox */
-.letter {
-    scrollbar-width: thin;
-    scrollbar-color: #d32f2f transparent;
 }
 
 /* Floating hearts */
