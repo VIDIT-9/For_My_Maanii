@@ -1,10 +1,10 @@
 // script.js
 
 const messages = [
-    "Maaniii yrrr.... kyu kr rhi h 🙁",
-    "Tjhe mjhe pareshan krne me bahut mzee aate h naa 😒?",
+    "Babbyyy.... kya kr rhe h 🙁",
+    "Tjhe pareshan krne me bahut mzee aate h naa 😒",
     "Mjhe bura lg rha h 😔",
-    "This is Last warning Maanii before.... 🧐",
+    "This is Last warning Maanii, before.... 🧐",
     "Last warning before I cry 🥺",
     "Maaniii... You are hurting me 😫",
     "I am crying 😭",
