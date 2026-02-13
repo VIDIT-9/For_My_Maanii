@@ -2,17 +2,67 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Knew you would say yes!</title>
-    <link rel="stylesheet" href="./yes_style.css">
+    <link rel="stylesheet" href="yes_style.css">
 </head>
 <body>
+
+    <div class="hearts"></div>
+
     <div class="container">
         <div class="gif_container">
-            <img src="./gif1.gif" alt="cute gif">
+            <img src="./gif1.gif" alt="cute crying gif">
         </div>
 
-        <h1 class="header_text">I always knew you would say yes!</h1>
+        <h1 class="header_text">
+            I always knew you would say yes ❤️
+        </h1>
+
+        <p class="love_message" id="loveText"></p>
+
+        <button class="reveal-btn" onclick="showMessage()">Click for Surprise 💌</button>
     </div>
+
+    <audio autoplay loop>
+        <source src="romantic.mp3" type="audio/mpeg">
+    </audio>
+
+    <script>
+        const message = "You just made me the happiest person alive 🥹💖";
+
+        function showMessage() {
+            let i = 0;
+            const speed = 50;
+            const loveText = document.getElementById("loveText");
+            loveText.innerHTML = "";
+
+            function typeWriter() {
+                if (i < message.length) {
+                    loveText.innerHTML += message.charAt(i);
+                    i++;
+                    setTimeout(typeWriter, speed);
+                }
+            }
+
+            typeWriter();
+        }
+
+        // Floating hearts generator
+        function createHeart() {
+            const heart = document.createElement("div");
+            heart.classList.add("heart");
+            heart.innerHTML = "💖";
+            heart.style.left = Math.random() * 100 + "vw";
+            heart.style.animationDuration = (Math.random() * 3 + 2) + "s";
+            document.body.appendChild(heart);
+
+            setTimeout(() => {
+                heart.remove();
+            }, 5000);
+        }
+
+        setInterval(createHeart, 300);
+    </script>
+
 </body>
 </html>
